@@ -266,48 +266,12 @@
 
       
         
-          
-            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>yarn是Facebook发布的Node.js包管理器，旨在取代npm。官方介绍yarn为快速、可靠、安全的依赖管理器</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>yarn有多种安装方式，下面介绍两种安装方式(windows环境下)：</p>
-<ul>
-<li><p>下载msi文件安装</p>
-<ul>
-<li>下载地址： <a href="https://yarnpkg.com/latest.msi" target="_blank" rel="external">https://yarnpkg.com/latest.msi</a></li>
-</ul>
-</li>
-<li><p>npm 的方式安装</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g yarn</div></pre></td></tr></table></figure>
-<p>安装完成后，可以通过命令测试是否安装成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn --version</div></pre></td></tr></table></figure>
-<p>安装完成后就可以尽情使用yarn了</p>
-<h3 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h3><p>在这里来展示yarn的一些常用命令</p>
-<h4 id="创建一个新项目"><a href="#创建一个新项目" class="headerlink" title="创建一个新项目"></a>创建一个新项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yarn</span></div><div class="line">$ yarn init [-y/--yes]</div><div class="line"></div><div class="line"><span class="comment"># npm </span></div><div class="line">$ npm init [-y]</div></pre></td></tr></table></figure>
-<h4 id="添加依赖项"><a href="#添加依赖项" class="headerlink" title="添加依赖项"></a>添加依赖项</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn add [package]</div></pre></td></tr></table></figure>
-<p>上述命令会自动将<code>[packgae]</code>添加到项目依赖中,相当于<code>npm install --save [package]</code></p>
-<p>如果要添加其他依赖类型，可以使用如下命令</p>
-<ul>
-<li><code>yarn add --dev</code> 添加到 <code>devDependencies</code></li>
-<li><code>yarn add --peer</code> 添加到 <code>peerDependencies</code></li>
-<li><code>yarn add --optional</code> 添加到 <code>optionalDependencies</code></li>
-</ul>
-<p>可以指定依赖的版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ yarn add [package]@[version]</div><div class="line"></div><div class="line">$ yarn add [package]@[tag]</div></pre></td></tr></table></figure></p>
-<h4 id="升级依赖包"><a href="#升级依赖包" class="headerlink" title="升级依赖包"></a>升级依赖包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yarn upgrade [package]</div><div class="line"></div><div class="line">yarn upgrade [package]@[version]</div><div class="line"></div><div class="line">yarn upgrade [package]@[tag]</div></pre></td></tr></table></figure>
-<h4 id="移除依赖包"><a href="#移除依赖包" class="headerlink" title="移除依赖包"></a>移除依赖包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn remove [package]</div></pre></td></tr></table></figure>
-<h4 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h4><ul>
-<li>安装所有依赖：<code>yarn</code> 或 <code>yarn install</code></li>
-<li>安装一个包的单一版本：<code>yarn install --flat</code></li>
-<li>强制重新下载所有包：<code>yarn install --force</code></li>
-<li>只安装生产环境依赖：<code>yarn install --production</code></li>
-</ul>
-<h4 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yarn global &lt;add/bin/ls/remove/upgrade&gt;</div></pre></td></tr></table></figure>
-<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><p>yarn会将每个包保存到本地用户目录下的全局缓存目录，所以只要是yarn安装过的，即便是没有网，也可以安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 打印每个缓存的包</span></div><div class="line">$ yarn cache ls</div><div class="line"></div><div class="line"><span class="comment"># 打印当前yarn的缓存目录</span></div><div class="line">$ yarn cache dir</div><div class="line"></div><div class="line"><span class="comment"># 清除本地缓存</span></div><div class="line">$ yarn cache clean</div></pre></td></tr></table></figure>
-<h4 id="check"><a href="#check" class="headerlink" title="check"></a>check</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 验证当前项目package.json里的依赖包的版本与yarn的lock文件是否匹配</span></div><div class="line">$ yarn check</div><div class="line"></div><div class="line"><span class="comment"># 验证当前项目 package.json 里包内容的版本和 hash 值是否与 yarn 的 lock 文件一致</span></div><div class="line">$ yarn check --integrity</div></pre></td></tr></table></figure>
-<h4 id="列出已安装的包"><a href="#列出已安装的包" class="headerlink" title="列出已安装的包"></a>列出已安装的包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 列出当前目录中的所有依赖，包括项目的依赖</span></div><div class="line">$ yarn list</div><div class="line"></div><div class="line"><span class="comment"># 限制显示的依赖的深度</span></div><div class="line">$ yarn list [--depth]</div><div class="line"></div><div class="line"><span class="comment"># 例如</span></div><div class="line">$ yarn list --depth=0</div></pre></td></tr></table></figure>
-<h4 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 运行指定的脚本</span></div><div class="line">$ yarn run [script] [-- &lt;args&gt;]</div><div class="line"></div><div class="line"><span class="comment"># 如果不指定脚本，那么会列出包里所有可运行的脚本</span></div><div class="line">$ yarn run</div></pre></td></tr></table></figure>
-          
+          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>yarn是Facebook发布的Node.js包管理器，旨在取代npm。官方介绍yarn为快速、可靠、安全的依赖管理器<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/06/yarn简单使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -591,95 +555,14 @@
 
       
         
-          
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Node中，可以通过命令行安装</p>
+          <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Node中，可以通过命令行安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install nunjucks --save</div></pre></td></tr></table></figure>
-<p>安装完成后，通过<code>require(&#39;nunjucks&#39;)</code>加载</p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>最简单的用法：首先设置配置(例如autoescaping)，然后渲染一个字符串</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nunjucks.configure(&#123; <span class="attr">autoescape</span>: <span class="literal">true</span> &#125;);</div><div class="line">nunjucks.renderString(<span class="string">'Hello &#123;&#123; username &#125;&#125;'</span>, &#123; <span class="attr">username</span>: <span class="string">'James'</span> &#125;);</div></pre></td></tr></table></figure>
-<p>一般并不会用<code>renderString</code>，而是使用render来直接渲染一个独立的模板文件。使用这种方式你还可以继承或引入模板。使用这种方式首先需要在nunjucks的第一个参数中配置文件的路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nunjucks.configure(<span class="string">'views'</span>, &#123; <span class="attr">autoescape</span>: <span class="literal">true</span> &#125;);</div><div class="line">nunjucks.render(<span class="string">'index.html'</span>, &#123; <span class="attr">foo</span>: <span class="string">'bar'</span> &#125;);</div></pre></td></tr></table></figure>
-<p>在node中，’views’是相对当前工作路径的相对路劲。在浏览器中，它是一个相对的URL。如果要指定绝对路径，使用’/views’</p>
-<p>如果使用的是express,可以将express应用程序直接传入nunjucks</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">nunjucks.configure(<span class="string">'views'</span>, &#123;</div><div class="line">    <span class="attr">autoescape</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">express</span>: app</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.render(<span class="string">'index.html'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>上面的 API 适用于 node 端和浏览器端 (express 只适用于 node 端)，在 node 端 nunjucks 从文件系统加载模板，在浏览器端通过 http 加载模板。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量会从模板上下文获取，如果要使用一个变量，可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;usename&#125;&#125;</div></pre></td></tr></table></figure>
-<p>将会从上下文查找username，然后显示在此处。该语法同样可以像javascript一样获取变量的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;foo.bar&#125;&#125;</div><div class="line"></div><div class="line">&#123;&#123;foo[&quot;bar&quot;]&#125;&#125;</div></pre></td></tr></table></figure></p>
-<p>如果变量的值为undefined或者null，那么将不会显示任何东西，同样适用于对象(例如<code>foo</code>的值是undefined，<code>, , </code>也不会显示)</p>
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>过滤器本质上是可用于变量的函数，过滤器通过”|”调用，并且可以带有参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; foo | title &#125;&#125;</div><div class="line">&#123;&#123; foo | join(&quot;,&quot;) &#125;&#125;</div><div class="line">&#123;&#123; foo | replace(&quot;foo&quot;, &quot;bar&quot;) | capitalize &#125;&#125;</div></pre></td></tr></table></figure>
-<p>你也可以使用链式的过滤器，第三个例子会先用”bar”替换”foo”，然后将首字母大写，最后显示”Bar”。</p>
-<p>nunjucks附带内置过滤器，你也可以添加自定义过滤器。</p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是便于重用模板的一种方式。</p>
-<p>在模板中通过定义<code>block</code>来使子模板重用。只要你愿意，继承链可以无限长</p>
-<p>父模板<code>parent.html</code>中的代码如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;% block header %&#125;</div><div class="line">This is the default content</div><div class="line">&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&lt;section class=&quot;left&quot;&gt;</div><div class="line">  &#123;% block left %&#125;</div><div class="line">  &#123;% endblock %&#125;</div><div class="line">&lt;/section&gt;</div><div class="line"></div><div class="line">&lt;section class=&quot;right&quot;&gt;</div><div class="line">  &#123;% block right %&#125;</div><div class="line">  This is more content</div><div class="line">  &#123;% endblock %&#125;</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure>
-<p>子模板为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;% extends &quot;parent.html&quot; %&#125;</div><div class="line"></div><div class="line">&#123;% block left %&#125;</div><div class="line">This is the left side!</div><div class="line">&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&#123;% block right %&#125;</div><div class="line">This is the right side!</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure></p>
-<p>最终输出结果如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">This is the default content</div><div class="line"></div><div class="line">&lt;section class=&quot;left&quot;&gt;</div><div class="line">  This is the left side!</div><div class="line">&lt;/section&gt;</div><div class="line"></div><div class="line">&lt;section class=&quot;right&quot;&gt;</div><div class="line">  This is the right side!</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure></p>
-<p>你可以将继承的模板设为一个变量，这样就可以动态指定继承的模板。这个变量既可以是个指向模板文件的字符串，也可以是个模板编译后所生成的对象(需要添加上下文环境)。因此你可以通过设置上下文变量，从而在渲染时动态地改变所要继承的模板。</p>
-<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><p>可以通过调用<code>super</code>来将父模板block中的内容渲染到子模板的block中。如上面的子模板写成如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;% block right %&#125;</div><div class="line">&#123;&#123; super() &#125;&#125;</div><div class="line">Right side!</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This is more content</div><div class="line">Right side!</div></pre></td></tr></table></figure>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><p>if可以根据条件选择显示的内容，和javascript中的if类似</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% if variable %&#125;</div><div class="line">  It is true</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
-<p>如果变量定义了并且值为true，那么就会显示<code>It is true</code>, 否则什么都不会显示</p>
-<p>如果有多个条件，也可以使用elif(或elseif)与else<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if hungry %&#125;</div><div class="line">  I am hungry</div><div class="line">&#123;% elif tired %&#125;</div><div class="line">  I am tired</div><div class="line">&#123;% else %&#125;</div><div class="line">  I am good!</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
-<p>也可以把它当成一个内联表达式来使用</p>
-<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><ul>
-<li>for可以遍历数组和字典</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> items = [&#123; <span class="attr">title</span>: <span class="string">"foo"</span>, <span class="attr">id</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">title</span>: <span class="string">"bar"</span>, <span class="attr">id</span>: <span class="number">2</span>&#125;];</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Posts<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">&#123;% for item in items %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.title &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">&#123;% else %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>This would display if the 'item' collection were empty<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">&#123;% endfor %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>上述的例子会将<code>items</code>中的每一项的<code>title</code>属性显示出来，如果<code>items</code>是一个空数组，那么会显示<code>else</code>分支语句中的内容</p>
-<ul>
-<li>遍历对象</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> food = &#123;</div><div class="line">  <span class="string">'ketchup'</span>: <span class="string">'5 tbsp(汤匙)'</span>,</div><div class="line">  <span class="string">'mustard'</span>: <span class="string">'1 tbsp'</span>,</div><div class="line">  <span class="string">'pickle'</span>: <span class="string">'0 tbsp'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% for ingredient, amount in food %&#125;</div><div class="line">  Use &#123;&#123; amount &#125;&#125; of &#123;&#123; ingredient &#125;&#125;</div><div class="line">&#123;% endfor %&#125;</div></pre></td></tr></table></figure>
-<p>dictsort过滤器可将对象排序(0.1.8版本新增)<br>dictsort语法：<code>ictsort(value, case_sensitive=False, by=&#39;key&#39;)</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;% for item in mydict|dictsort %&#125;</div><div class="line">    sort the dict by key, case insensitive</div><div class="line">    根据key排序，不区分大小写</div><div class="line"></div><div class="line">&#123;% for item in mydict|dictsort(true) %&#125;</div><div class="line">    sort the dict by key, case sensitive</div><div class="line">    根据key排序，区分大小写</div><div class="line"></div><div class="line">&#123;% for item in mydict|dictsort(false, &apos;value&apos;) %&#125;</div><div class="line">    sort the dict by value, case insensitive</div><div class="line">    根据value排序，不区分大小写</div></pre></td></tr></table></figure>
-<ul>
-<li>nunjucks可以将数组分解为变量</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> points = [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>], [<span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>]];</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% for x, y, z in points %&#125;</div><div class="line">  Point: &#123;&#123; x &#125;&#125;, &#123;&#123; y &#125;&#125;, &#123;&#123; z &#125;&#125;</div><div class="line">&#123;% endfor %&#125;</div></pre></td></tr></table></figure>
-<p>在循环中，可以获取一些特殊的变量</p>
-<ul>
-<li><code>loop.index</code>:循环的当前索引(从1开始)</li>
-<li><code>loop.index0</code>:循环的当前索引(从0开始)</li>
-<li><code>loop.revindex</code>: 索引数(从后往前) (1 indexed)</li>
-<li><code>loop.revindex0</code>: 索引数(从后往前) (0 based)</li>
-<li><code>loop.first</code>: 是否是第一个</li>
-<li><code>loop.last</code>: 是否是最后一个</li>
-<li><code>loop.length</code>: 总数</li>
-</ul>
-<h4 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h4><p>extends用来制定模板继承，被指定的模板作为基本的父模板。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% extends &quot;base.html&quot; %&#125;</div></pre></td></tr></table></figure>
-<p>你可以将继承的模板设为一个变量，这样就可以动态指定继承的模板。这个变量既可以是个指向模板文件的字符串，也可以是个模板编译后所生成的对象(需要添加上下文环境)。因此你可以通过设置上下文变量，从而在渲染时动态地改变所要继承的模板。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% extends parentTemplate %&#125;</div></pre></td></tr></table></figure>
-<p>事实上，extends接受任意表达式，只要它最终返回一个字符串或一个编译过的模板对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% extends name + &quot;.html&quot; %&#125;</div></pre></td></tr></table></figure>
-<h4 id="blocks"><a href="#blocks" class="headerlink" title="blocks"></a>blocks</h4><p>block定义了一个模板片段，通过名字来进行标识，用来实现模板继承。基本的父模板会指定一个区块，子模板会用新内容覆盖它。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% block css %&#125;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;app.css&quot; /&gt;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
-<p>你也可以通过循环来定义一个模板片段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;% for item in items %&#125;</div><div class="line">&#123;% block item %&#125;</div><div class="line">&#123;&#123; item &#125;&#125;&#123;% endblock %&#125;</div><div class="line">&#123;% endfor %&#125;</div></pre></td></tr></table></figure>
-<p>子模板会覆盖item片段并改变它的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% extends &quot;item.html&quot; %&#125;</div><div class="line"></div><div class="line">&#123;% block item %&#125;</div><div class="line">The name of the item is: &#123;&#123; item.name &#125;&#125;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
-<p>super可以将父模板的内容保留并渲染出来</p>
-<h4 id="include"><a href="#include" class="headerlink" title="include"></a>include</h4><p>include引入其他的模板，如果某些模板已经继承了其他的模板，而又需要在这些模板中共享一些小模板，include将会非常有用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include &quot;item.html&quot; %&#125;</div></pre></td></tr></table></figure>
-<p>你还可以在循环的中间引入模板</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% for item in items %&#125;</div><div class="line">&#123;% include &quot;item.html&quot; %&#125;</div><div class="line">&#123;% endfor %&#125;</div></pre></td></tr></table></figure>
-<p>这一点可以帮助我们把模板切分成更小的部分，从而使得在浏览器上，当我们需要改变页面时，我们可以渲染这些小部分的模板，而非一整个的大的模板。</p>
-<p>include 可以接受任意表达式，只要它最终返回一个字符串或是模板所编译成的对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include 可以接受任意表达式，只要它最终返回一个字符串或是模板所编译成的对象</div></pre></td></tr></table></figure>
-<p>如果我们不希望在模板不存在时抛出异常，使用<code>ignore missing</code>选项来阻止抛出异常</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include &quot;missing.html&quot; ignore missing %&#125;</div></pre></td></tr></table></figure>
-<p>被包含的模版自身可以扩展(extends)另一个模版（因此你可以让一系列相关联的模版继承同一种结构）。 一个被包含的模版并不会改变包含它的模版的区块结构，它有一个分离的继承树和块级命名空间。换言之， 在渲染时，include并不 不是 将被包含模版代码拉取到包含它的模版中的预处理器。相对的，它对被 包含的模版触发了一次的分离渲染，然后再将渲染的结果引入</p>
-
-          
+<p>安装完成后，通过<code>require(&#39;nunjucks&#39;)</code>加载<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/21/nunjucks简单使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

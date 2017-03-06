@@ -86,26 +86,20 @@
 
 <meta name="description" content="安装在Node中，可以通过命令行安装
 1$ npm install nunjucks --save
-安装完成后，通过require(&amp;#39;nunjucks&amp;#39;)加载
-用法最简单的用法：首先设置配置(例如autoescaping)，然后渲染一个字符串
-12nunjucks.configure(&amp;#123; autoescape: true &amp;#125;);nunjucks.renderSt">
+安装完成后，通过require(&amp;#39;nunjucks&amp;#39;)加载">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nunjucks简单使用">
 <meta property="og:url" content="http://yoursite.com/2017/02/21/nunjucks简单使用/index.html">
 <meta property="og:site_name" content="duanlijie的笔记">
 <meta property="og:description" content="安装在Node中，可以通过命令行安装
 1$ npm install nunjucks --save
-安装完成后，通过require(&amp;#39;nunjucks&amp;#39;)加载
-用法最简单的用法：首先设置配置(例如autoescaping)，然后渲染一个字符串
-12nunjucks.configure(&amp;#123; autoescape: true &amp;#125;);nunjucks.renderSt">
-<meta property="og:updated_time" content="2017-02-21T01:39:40.626Z">
+安装完成后，通过require(&amp;#39;nunjucks&amp;#39;)加载">
+<meta property="og:updated_time" content="2017-03-06T05:18:47.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nunjucks简单使用">
 <meta name="twitter:description" content="安装在Node中，可以通过命令行安装
 1$ npm install nunjucks --save
-安装完成后，通过require(&amp;#39;nunjucks&amp;#39;)加载
-用法最简单的用法：首先设置配置(例如autoescaping)，然后渲染一个字符串
-12nunjucks.configure(&amp;#123; autoescape: true &amp;#125;);nunjucks.renderSt">
+安装完成后，通过require(&amp;#39;nunjucks&amp;#39;)加载">
 
 
 
@@ -275,7 +269,7 @@
       
         <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Node中，可以通过命令行安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install nunjucks --save</div></pre></td></tr></table></figure>
-<p>安装完成后，通过<code>require(&#39;nunjucks&#39;)</code>加载</p>
+<p>安装完成后，通过<code>require(&#39;nunjucks&#39;)</code>加载<br><a id="more"></a></p>
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>最简单的用法：首先设置配置(例如autoescaping)，然后渲染一个字符串</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nunjucks.configure(&#123; <span class="attr">autoescape</span>: <span class="literal">true</span> &#125;);</div><div class="line">nunjucks.renderString(<span class="string">'Hello &#123;&#123; username &#125;&#125;'</span>, &#123; <span class="attr">username</span>: <span class="string">'James'</span> &#125;);</div></pre></td></tr></table></figure>
 <p>一般并不会用<code>renderString</code>，而是使用render来直接渲染一个独立的模板文件。使用这种方式你还可以继承或引入模板。使用这种方式首先需要在nunjucks的第一个参数中配置文件的路径</p>
