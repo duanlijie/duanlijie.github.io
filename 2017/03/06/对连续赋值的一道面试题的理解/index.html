@@ -85,23 +85,23 @@
 
 
 <meta name="description" content="一道面试题:
-1234567var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;undefinedObject&amp;#123;n:2&amp;#125;">
+12345var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="由一道面试题引发的对连续赋值的理解">
 <meta property="og:url" content="http://yoursite.com/2017/03/06/对连续赋值的一道面试题的理解/index.html">
 <meta property="og:site_name" content="duanlijie的笔记">
 <meta property="og:description" content="一道面试题:
-1234567var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;undefinedObject&amp;#123;n:2&amp;#125;">
+12345var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;">
 <meta property="og:image" content="http://yoursite.com/images/01.png">
 <meta property="og:image" content="http://yoursite.com/images/02.png">
 <meta property="og:image" content="http://yoursite.com/images/03.png">
 <meta property="og:image" content="http://yoursite.com/images/04.png">
 <meta property="og:image" content="http://yoursite.com/images/05.png">
-<meta property="og:updated_time" content="2017-03-06T14:46:14.399Z">
+<meta property="og:updated_time" content="2017-03-06T14:49:04.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由一道面试题引发的对连续赋值的理解">
 <meta name="twitter:description" content="一道面试题:
-1234567var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;undefinedObject&amp;#123;n:2&amp;#125;">
+12345var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;">
 <meta name="twitter:image" content="http://yoursite.com/images/01.png">
 
 
@@ -271,7 +271,7 @@
 
       
         <p>一道面试题:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">a.x = a = &#123;<span class="attr">n</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a.x); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(b.x); <span class="comment">// &#123;n: 2&#125;</span></div><div class="line"><span class="literal">undefined</span></div><div class="line"><span class="built_in">Object</span>&#123;<span class="attr">n</span>:<span class="number">2</span>&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">a.x = a = &#123;<span class="attr">n</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a.x); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(b.x); <span class="comment">// &#123;n: 2&#125;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>这是一道很老的面试题了,之前遇到这道面试题时,当时想的答案是第一个输出<code>{n: 2}</code>,第二个输出<code>undefined</code>,结果证明自己是错的,当时很困惑,在从网上看了其他人的解答后,不同的人对于答案有不同的理解,我在这里说一下我自己的理解:</p>
 <p>首先这道题的关键点就在于<code>a.x = a = {n: 2}</code>这段代码上。这就涉及到了运算符的优先级规则。</p>
