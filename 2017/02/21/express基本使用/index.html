@@ -1,0 +1,716 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="安装如果安装了Node.js，为应用创建一个目录，将该目录作为当前工作目录
+12$ mkdir myapp$ cd myapp
+使用npm install命令创建一个package.json文件
+1$ npm init
+这个命令会让你输入一些参数，例如此应用的名字和版本号，大部分参数你可以敲“回车”使用默认参数，下面这个例外
+1entry point: (index.js)
+输入app.js,或者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express基本使用">
+<meta property="og:url" content="http://yoursite.com/2017/02/21/express基本使用/index.html">
+<meta property="og:site_name" content="duanlijie的笔记">
+<meta property="og:description" content="安装如果安装了Node.js，为应用创建一个目录，将该目录作为当前工作目录
+12$ mkdir myapp$ cd myapp
+使用npm install命令创建一个package.json文件
+1$ npm init
+这个命令会让你输入一些参数，例如此应用的名字和版本号，大部分参数你可以敲“回车”使用默认参数，下面这个例外
+1entry point: (index.js)
+输入app.js,或者">
+<meta property="og:image" content="http://yoursite.com/images/express-mw.png">
+<meta property="og:updated_time" content="2017-02-21T02:10:49.840Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="express基本使用">
+<meta name="twitter:description" content="安装如果安装了Node.js，为应用创建一个目录，将该目录作为当前工作目录
+12$ mkdir myapp$ cd myapp
+使用npm install命令创建一个package.json文件
+1$ npm init
+这个命令会让你输入一些参数，例如此应用的名字和版本号，大部分参数你可以敲“回车”使用默认参数，下面这个例外
+1entry point: (index.js)
+输入app.js,或者">
+<meta name="twitter:image" content="http://yoursite.com/images/express-mw.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> express基本使用 | duanlijie的笔记 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">duanlijie的笔记</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                express基本使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-21T09:25:58+08:00" content="2017-02-21">
+              2017-02-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果安装了Node.js，为应用创建一个目录，将该目录作为当前工作目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mkdir myapp</div><div class="line">$ <span class="built_in">cd</span> myapp</div></pre></td></tr></table></figure>
+<p>使用<code>npm install</code>命令创建一个<code>package.json</code>文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init</div></pre></td></tr></table></figure>
+<p>这个命令会让你输入一些参数，例如此应用的名字和版本号，大部分参数你可以敲“回车”使用默认参数，下面这个例外</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">entry point: (index.js)</div></pre></td></tr></table></figure>
+<p>输入app.js,或者其他你所希望的名称，如果你想让它是<code>index.js</code>，直接敲回车即可</p>
+<p>在myapp目录下安装Express并将它保存到依赖列表中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install express --save</div></pre></td></tr></table></figure>
+<p>如果只是想要暂时的安装Express，并不想添加到依赖列表里，直接去掉<code>--save</code>即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install express</div></pre></td></tr></table></figure>
+<p>使用<code>--save</code>安装的Node模块会自动添加到<code>package.json</code>文件中的<code>dependencies</code>列表中，之后在应用目录中使用<code>npm install</code>就会自动安装列表中的模块</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>路由是指应用入口(URIs)的定义以及它们如何响应客户端请求。</p>
+<p>一个最基本的路由例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line"><span class="comment">// respond with "hello world" when a GET request is made to the homepage</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'hello world'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="路由方法"><a href="#路由方法" class="headerlink" title="路由方法"></a>路由方法</h4><p>路由方法源于HTTP请求方法，是express实例的方法</p>
+<p>下面的代码是为应用根路径定义的GET和POST请求的路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET method route</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'GET request to the homepage'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// POST method route</span></div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'POST request to the homepage'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Express支持下列和HTTP请求方法相对应的路由方法：get, post, put, head, delete, options, trace, copy, lock, mkcol, move, purge, propfind, proppatch, unlock, report, mkactivity, checkout, merge, m-search, notify, subscribe, unsubscribe, patch, search, and connect.</p>
+<p><code>app.all()</code>是一个特殊的路由方法，没有与之相对应的HTTP请求方法，它的作用是对于一个路径中的所有方法加载中间件函数</p>
+<p>下面的例子中，只要是基于”/secret”的请求，无论是 GET, POST, PUT, DELETE，或是其他任何HTTP模块支持的HTTP请求方法，处理函数都会执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.all(<span class="string">'/secret'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Accessing the secret section ...'</span>)</div><div class="line">  next() <span class="comment">// pass control to the next handler</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="路由路径"><a href="#路由路径" class="headerlink" title="路由路径"></a>路由路径</h4><p>路由路径和路由方法一起定义了请求端口。路由路径可以使字符串、字符串模式、正则表达式。</p>
+<p>?,+,*和()是正则表达式的子集，连字符(-)和点(.)在基于字符串的路径中按照字面值解释</p>
+<pre><code>查询字符串不是路由路径的一部分
+</code></pre><p>基于字符串的路由路径示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匹配根路径的请求</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'root'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 匹配/about路径的请求</span></div><div class="line">app.get(<span class="string">'/about'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'about'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 匹配/random.text的请求</span></div><div class="line">app.get(<span class="string">'/random.text'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'random.text'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>基于字符串模式的路由路径示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匹配acd和abcd的路由路径</span></div><div class="line">app.get(<span class="string">'/ab?cd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab?cd'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 匹配abcd、abbcd、abbbcd...的路由路径</span></div><div class="line">app.get(<span class="string">'/ab+cd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab+cd'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 匹配abcd, abxcd, abRANDOMcd, ab123cd...的路由路径</span></div><div class="line">app.get(<span class="string">'/ab*cd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab*cd'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 匹配abe、abcde的路由路径</span></div><div class="line">app.get(<span class="string">'/ab(cd)?e'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab(cd)?e'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>基于正则表达式的路由路径示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匹配任何路径中含有a的路由路径</span></div><div class="line">app.get(<span class="regexp">/a/</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'/a/'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 匹配butterfly 和dragonfly，但不匹配butterflyman、dragonflyman等</span></div><div class="line">app.get(<span class="regexp">/.*fly$/</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'/.*fly$/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h4><p>路由参数是指定的用来捕获URL中指定位置的值的URL字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route path: /users/:userId/books/:bookId</div><div class="line">Request URL: http://localhost:3000/users/34/books/8989</div><div class="line">req.params: &#123; &quot;userId&quot;: &quot;34&quot;, &quot;bookId&quot;: &quot;8989&quot; &#125;</div></pre></td></tr></table></figure>
+<p>使用路由参数来定义一个路由，只要像下面这样在路径中简单的指定路由参数即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/users/:userId/books/:bookId'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(req.params)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>由于连字符(-)和点(.)是按字面值解释，所以它们可以和路由参数一块使用来达到一些功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route path: /flights/:from-:to</div><div class="line">Request URL: http://localhost:3000/flights/LAX-SFO</div><div class="line">req.params: &#123; &quot;from&quot;: &quot;LAX&quot;, &quot;to&quot;: &quot;SFO&quot; &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route path: /plantae/:genus.:species</div><div class="line">Request URL: http://localhost:3000/plantae/Prunus.persica</div><div class="line">req.params: &#123; &quot;genus&quot;: &quot;Prunus&quot;, &quot;species&quot;: &quot;persica&quot; &#125;</div></pre></td></tr></table></figure>
+<pre><code>路由参数必须由字符([A-Za-z0-9_])组成
+</code></pre><h4 id="路由句柄"><a href="#路由句柄" class="headerlink" title="路由句柄"></a>路由句柄</h4><p>可以像中间件一样提供多个回调函数来处理一个请求，唯一的区别是这些回调函数有可能调用 next(‘route’) 方法而略过其他的路由回调函数。可以使用该机制来为路由设置前提条件，如果当前路由没有继续执行下去的理由，将控制权交给之后的路由。</p>
+<p>路由句柄可以是一个函数，函数组成的数组，或是两者混合，下面的例子将会展示：</p>
+<p>一个回调函数处理路由：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/example/a'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello from A!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>多个回调函数处理路由（确保指定了next对象）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/example/b'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'the response will be sent by the next function ...'</span>)</div><div class="line">  next()</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello from B!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>回调函数数组处理路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cb0 = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'CB0'</span>)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cb1 = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'CB1'</span>)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cb2 = <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello from C!'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">app.get(<span class="string">'/example/c'</span>, [cb0, cb1, cb2])</div></pre></td></tr></table></figure>
+<p>单独的回调函数和回调函数数组结合使用处理路由：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cb0 = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'CB0'</span>)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cb1 = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'CB1'</span>)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line"></div><div class="line">app.get(<span class="string">'/example/d'</span>, [cb0, cb1], <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'the response will be sent by the next function ...'</span>)</div><div class="line">  next()</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello from D!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="响应方法"><a href="#响应方法" class="headerlink" title="响应方法"></a>响应方法</h4><p>下表中的响应对象(res)的方法会想客户端发送一个响应，终结请求响应循环，如果路由句柄中一个方法也没有被执行，来自客户端的请求会被一直挂起</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>res.download()</td>
+<td>提示下载文件</td>
+</tr>
+<tr>
+<td>res.end()</td>
+<td>结束响应进程</td>
+</tr>
+<tr>
+<td>res.json()</td>
+<td>发送一个json格式的响应</td>
+</tr>
+<tr>
+<td>res.jsonp()</td>
+<td>发送一个支持支持jsonp的json格式的响应</td>
+</tr>
+<tr>
+<td>res.redirect()</td>
+<td>重定向请求</td>
+</tr>
+<tr>
+<td>res.render()</td>
+<td>渲染视图模板</td>
+</tr>
+<tr>
+<td>res.send()</td>
+<td>发送各种类型的响应</td>
+</tr>
+<tr>
+<td>res.sendFile()</td>
+<td>以八位字节流的形式发送文件</td>
+</tr>
+<tr>
+<td>res.sendStatus()</td>
+<td>设置响应状态码，并将它的字符串形式作为响应体发送</td>
+</tr>
+</tbody>
+</table>
+<h4 id="app-route"><a href="#app-route" class="headerlink" title="app.route()"></a>app.route()</h4><p>可以使用app.route()为路由路径创建链式的路由句柄。因为路径被指定在了一个地方，因此有助于创建模块化路由，减少代码的冗余和拼写错误</p>
+<p>下面的例子通过app.route()定义了链式路由句柄</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">app.route(<span class="string">'/book'</span>)</div><div class="line">  .get(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.send(<span class="string">'Get a random book'</span>)</div><div class="line">  &#125;)</div><div class="line">  .post(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.send(<span class="string">'Add a book'</span>)</div><div class="line">  &#125;)</div><div class="line">  .put(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">    res.send(<span class="string">'Update the book'</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<h4 id="express-Router"><a href="#express-Router" class="headerlink" title="express.Router"></a>express.Router</h4><p>使用express.Router类创建模块化、可挂载的路由句柄。一个Router实例是一个完整的中间件和路由系统，出于这个理由，它经常被认为是一个”mini-app”。</p>
+<p>下面的例子创建了一个路由模块，在其中加载了一个中间件函数，定义了一些路由，并将它们挂载到了应用的路径上</p>
+<p>在应用目录下创建名为birds.js的路由文件，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> router = express.Router()</div><div class="line"></div><div class="line"><span class="comment">// middleware that is specific to this router</span></div><div class="line">router.use(<span class="function"><span class="keyword">function</span> <span class="title">timeLog</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Time: '</span>, <span class="built_in">Date</span>.now())</div><div class="line">  next()</div><div class="line">&#125;)</div><div class="line"><span class="comment">// define the home page route</span></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Birds home page'</span>)</div><div class="line">&#125;)</div><div class="line"><span class="comment">// define the about route</span></div><div class="line">router.get(<span class="string">'/about'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'About birds'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router</div></pre></td></tr></table></figure>
+<p>然后，在应用中加载路由模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> birds = <span class="built_in">require</span>(<span class="string">'./birds'</span>);</div><div class="line">...</div><div class="line">app.use(<span class="string">'/birds'</span>, birds);</div></pre></td></tr></table></figure>
+<p>应用可处理来自/birds 和 /birds/about的请求，并且调用为该路由指定的中间件函数timeLog。</p>
+<h3 id="编写用于Express应用的中间件"><a href="#编写用于Express应用的中间件" class="headerlink" title="编写用于Express应用的中间件"></a>编写用于Express应用的中间件</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>中间件函数是一个函数，它可以在应用的请求-响应循环中访问请求对象(req)、响应对象(res)和调用next函数。<br>next函数是一个在Express路由中调用时可以执行当前中间件之后的中间件的函数。</p>
+<p>中间件函数的功能有：</p>
+<ul>
+<li>执行任何函数</li>
+<li>修改请求和响应对象</li>
+<li>结束请求-响应循环</li>
+<li>调用栈中的下一个中间件</li>
+</ul>
+<p>如果当前的中间件函数没有结束请求-响应循环，就必须调用next()来将控制权交给下一个中间件函数，否则，请求就会被挂起</p>
+<p>下图展示了调用一个中间件函数所需要的：<br><img src="/images/express-mw.png" alt=""></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>这是一个简单的”hello world”Express应用示例。后面会给这个应用定义和添加两个中间件函数：一个是myLogger，用来打印简单的日志信息，另一个是requestTime，用来展示HTTP请求的时间戳</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello World!'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>)</div></pre></td></tr></table></figure>
+<p>#####　myLogger中间件函数</p>
+<p>一个简单的myLogger中间件函数示例。这个函数只是在有请求通过它时打印”LOGGED”。它被赋值给myLogger变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myLogger = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'LOGGED'</span>)</div><div class="line">  next()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>注意上面调用的next(),调用了这个函数之后就可以继续执行下一个中间件函数。next()函数不是Node.js的一部分或者Express API，而是传递给中间件函数的第三个参数。它可以被命名为任何名字，但是约定俗成的把它叫做next，为了避免混淆，应该总是遵守这个约定。
+</code></pre><p>通过app.use()制定中间件函数并加载。下面的代码会在加载到根路径(/)的路由之前加载myLogger</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line"><span class="keyword">var</span> myLogger = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'LOGGED'</span>)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line"></div><div class="line">app.use(myLogger)</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello World!'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>)</div></pre></td></tr></table></figure>
+<p>每次应用收到请求时，都会在终端打印出”LOGGED”。</p>
+<p>中间件函数的顺序很重要：先加载到的中间件函数总会先执行。</p>
+<p>如果myLogger在根路径的路由之后才加载到，那么请求永远也不会到达，也不会打印出”LOGGED”。因为根路径的路由处理程序结束了请求响应循环。</p>
+<p>myLogger中间件函数只是简单的打印了一条信息，然后通过调用next()函数将请求传递给栈中的下一个中间件函数。</p>
+<h5 id="requestTime中间件函数"><a href="#requestTime中间件函数" class="headerlink" title="requestTime中间件函数"></a>requestTime中间件函数</h5><p>接下来，创建一个名为”requestTime”的中间件函数，并给请求对象添加一个requestTime属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> requestTime = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  req.requestTime = <span class="built_in">Date</span>.now()</div><div class="line">  next()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>应用可以使用requestTime中间件函数了，根路径的路由中的回调函数也可以使用添加到req对象上的属性了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line"><span class="keyword">var</span> requestTime = <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  req.requestTime = <span class="built_in">Date</span>.now()</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line"></div><div class="line">app.use(requestTime)</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> responseText = <span class="string">'Hello World!&lt;br&gt;'</span></div><div class="line">  responseText += <span class="string">'&lt;small&gt;Requested at: '</span> + req.requestTime + <span class="string">'&lt;/small&gt;'</span></div><div class="line">  res.send(responseText)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>)</div></pre></td></tr></table></figure>
+<p>当请求根路径时，应用就会将你发请求时的时间戳显示到浏览器中</p>
+<p>因为可以使用请求对象，响应对象，栈中的下一个中间件函数，还有Node.js中所有的API，所以中间件函数的潜力是无穷的</p>
+<h3 id="使用中间件"><a href="#使用中间件" class="headerlink" title="使用中间件"></a>使用中间件</h3><p>Express是一个自身功能极简，依靠路由和中间件的web框架：本质上来说，一个Express应用就是在调用各种的中间件</p>
+<p>中间件函数是一个函数，它可以在应用的请求-响应循环中访问请求对象(req)、响应对象(res)和调用next函数。next中间件函数通常被赋值给一个名为next的变量</p>
+<p>中间件函数的功能有：</p>
+<ul>
+<li>执行任何函数</li>
+<li>修改请求和响应对象</li>
+<li>结束请求-响应循环</li>
+<li>调用栈中的下一个中间件</li>
+</ul>
+<p>如果当前的中间件函数没有结束请求-响应循环，就必须调用next()来将控制权交给下一个中间件函数，否则，请求就会被挂起</p>
+<p>一个Express应用可使用如下几种中间件：</p>
+<ul>
+<li>应用级中间件</li>
+<li>路由级中间件</li>
+<li>错误处理中间件</li>
+<li>内置中间件</li>
+<li>第三方中间件</li>
+</ul>
+<p>可以通过可选的挂载路径加载应用级中间件和路由级中间件，也可以同时加载一系列的中间件函数，从而在挂载点创建一个中间件系统的子栈。</p>
+<h4 id="应用级中间件"><a href="#应用级中间件" class="headerlink" title="应用级中间件"></a>应用级中间件</h4><p>使用app.use()和app.METHOD()来将应用级的中间件绑定到app对象的一个实例上。METHOD是指HTTP请求方法，例如：GET、PUT、POST，中间件函数中需要小写。</p>
+<p>这个例子是没有挂载路径的中间件函数，只要接收到请求，不管何种请求，函数就会被执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Time:'</span>, <span class="built_in">Date</span>.now())</div><div class="line">  next()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这个例子是挂载到/user/:id路径上的中间件函数。在/user/:id路径上的任何类型的TTP请求，函数都会被执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="string">'/user/:id'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Request Type:'</span>, req.method)</div><div class="line">  next()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这个例子是一个路由和处理函数(中间件系统),这个函数用来处理指向/user/:id的GET请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/user/:id'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'USER'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>下面这个例子是在一个挂载点加载一系列的中间件函数，还有挂载路径。一个中间件子栈，任何指向/user/:id路径的HTTP请求都会被打印出来请求信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="string">'/user/:id'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Request URL:'</span>, req.originalUrl)</div><div class="line">  next()</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Request Type:'</span>, req.method)</div><div class="line">  next()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/21/nunjucks简单使用/" rel="next" title="nunjucks简单使用">
+                <i class="fa fa-chevron-left"></i> nunjucks简单使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/06/canvas用法/" rel="prev" title="canvas用法">
+                canvas用法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/IMG_20160405_175459.jpg"
+               alt="duanlijie" />
+          <p class="site-author-name" itemprop="name">duanlijie</p>
+          <p class="site-description motion-element" itemprop="description">前端小白的个人笔记，个人记录所用jim_duan@outlook.com</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由"><span class="nav-number">2.1.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">路由方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由路径"><span class="nav-number">2.1.2.</span> <span class="nav-text">路由路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由参数"><span class="nav-number">2.1.3.</span> <span class="nav-text">路由参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由句柄"><span class="nav-number">2.1.4.</span> <span class="nav-text">路由句柄</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应方法"><span class="nav-number">2.1.5.</span> <span class="nav-text">响应方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app-route"><span class="nav-number">2.1.6.</span> <span class="nav-text">app.route()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#express-Router"><span class="nav-number">2.1.7.</span> <span class="nav-text">express.Router</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写用于Express应用的中间件"><span class="nav-number">2.2.</span> <span class="nav-text">编写用于Express应用的中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">2.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.2.2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#requestTime中间件函数"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">requestTime中间件函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用中间件"><span class="nav-number">2.3.</span> <span class="nav-text">使用中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#应用级中间件"><span class="nav-number">2.3.1.</span> <span class="nav-text">应用级中间件</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">duanlijie</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

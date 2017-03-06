@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="canvas标签是H5中提供的新标签,基本用法如下
+1&amp;lt;canvas id=&quot;canvas&quot; width=&quot;500&quot; height=&quot;500&quot; &amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;canvas&amp;gt;标签只是一个容器,需要使用js来进行控制,绘制图形
+基本用法获取环境
+获取canvas元素
+
+1var cvs = document.getElementById(&apos;canvas&apos;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas用法">
+<meta property="og:url" content="http://yoursite.com/2017/03/06/canvas用法/index.html">
+<meta property="og:site_name" content="duanlijie的笔记">
+<meta property="og:description" content="canvas标签是H5中提供的新标签,基本用法如下
+1&amp;lt;canvas id=&quot;canvas&quot; width=&quot;500&quot; height=&quot;500&quot; &amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;canvas&amp;gt;标签只是一个容器,需要使用js来进行控制,绘制图形
+基本用法获取环境
+获取canvas元素
+
+1var cvs = document.getElementById(&apos;canvas&apos;)">
+<meta property="og:updated_time" content="2017-03-06T04:44:37.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas用法">
+<meta name="twitter:description" content="canvas标签是H5中提供的新标签,基本用法如下
+1&amp;lt;canvas id=&quot;canvas&quot; width=&quot;500&quot; height=&quot;500&quot; &amp;gt;&amp;lt;/canvas&amp;gt;
+&amp;lt;canvas&amp;gt;标签只是一个容器,需要使用js来进行控制,绘制图形
+基本用法获取环境
+获取canvas元素
+
+1var cvs = document.getElementById(&apos;canvas&apos;)">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> canvas用法 | duanlijie的笔记 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">duanlijie的笔记</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                canvas用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-06T11:44:58+08:00" content="2017-03-06">
+              2017-03-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>canvas标签是H5中提供的新标签,基本用法如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span> &gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>&lt;canvas&gt;</code>标签只是一个容器,需要使用js来进行控制,绘制图形</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><h4 id="获取环境"><a href="#获取环境" class="headerlink" title="获取环境"></a>获取环境</h4><ul>
+<li>获取canvas元素</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cvs = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>获取绘图上下文</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cxt = cvs.getContext(<span class="string">"2d"</span>);</div></pre></td></tr></table></figure>
+<p>参数’2d’表示2d上下文,webg1表示3d上下文</p>
+<h4 id="移动绘图游标到起点"><a href="#移动绘图游标到起点" class="headerlink" title="移动绘图游标到起点:"></a>移动绘图游标到起点:</h4><pre><code>`moveTo()`
+</code></pre><h4 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h4><h4 id="描边和填充"><a href="#描边和填充" class="headerlink" title="描边和填充"></a>描边和填充</h4><h2 id="设置画布"><a href="#设置画布" class="headerlink" title="设置画布"></a>设置画布</h2><ul>
+<li><p>画布默认初始大小为宽300,高150</p>
+</li>
+<li><p>可以根据canvas的<code>width</code>和<code>height</code>属性指定画布大小</p>
+</li>
+<li><p>可以通过css设置canvas的大小,但通过css样式设置canvas的大小,如果与原始的画布尺寸大小不一致,会出现缩放或扭曲</p>
+</li>
+<li><p>可以通过js动态改变画布大小,动态设置画布的大小会清除画布的内容。</p>
+</li>
+<li><p>canvas绘制的图形是位图(像素图)，默认就是基于像素单位的，所以不用加单位</p>
+</li>
+<li><p>canvas绘图环境中的很多方法是基于状态的，即修改了canvas绘图环境中的属性值，相关联的属性会发生改变</p>
+</li>
+</ul>
+<h2 id="2D上下文"><a href="#2D上下文" class="headerlink" title="2D上下文"></a>2D上下文</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="绘制路径-1"><a href="#绘制路径-1" class="headerlink" title="绘制路径"></a>绘制路径</h4><ul>
+<li><p><code>beginPath()</code>: 开辟新路径,同时清除之前的路径</p>
+</li>
+<li><p><code>moveTo()</code>: 将绘图游标移动到起始位置,不画线,设置路径起点</p>
+</li>
+<li><p><code>lineTo</code>: 绘制直线,如果之前没有任何路径和起点,那么第一个<code>lineTo()</code>就相当于<code>moveTo()</code></p>
+</li>
+<li><p><code>rect(x, y, width, height)</code>: 绘制矩形路径,从点（x,y）开始绘制矩形，宽度为<code>width</code>，高度为<code>height</code></p>
+</li>
+<li><p><code>arc(x, y, radius, startAngle, endAngle, counterclockwise)</code>: 画弧,以(x, y)为圆心,<code>radius</code>为半径,<code>startAngle</code>和<code>endAngle</code>为起始和结束角度,角度为弧度制.<code>counterclockwise</code>表示是否按逆时针计算</p>
+</li>
+<li><p><code>closePath()</code>: 闭合路径,可以连接最后一点和起点,还可以防止顶点的锯齿</p>
+</li>
+</ul>
+<h4 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h4><ul>
+<li><code>fill()</code>: 填充路径之内的区域</li>
+</ul>
+<h4 id="描边"><a href="#描边" class="headerlink" title="描边"></a>描边</h4><ul>
+<li><code>stroke()</code>: 对路径进行描边</li>
+</ul>
+<h4 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h4><p>该指定的绘制矩形的方法不会产生路径</p>
+<ul>
+<li><p><code>strokeRect(x, y, width, height)</code>: (x, y)为矩形坐标,width为矩形的宽,height为矩形的高.该方法为指定的矩形描边,描边颜色通过<code>strokeStyle</code>属性设置</p>
+</li>
+<li><p><code>fiilRect(x, y, width, height)</code>: 填充指定的颜色,填充的颜色通过<code>fillStyle</code>属性设置</p>
+</li>
+<li><p><code>clearRect(x, y, width, height)</code>: 清除指定的矩形区域</p>
+</li>
+</ul>
+<h4 id="虚线绘制"><a href="#虚线绘制" class="headerlink" title="虚线绘制"></a>虚线绘制</h4><ul>
+<li><p><code>setLineDash(Array)</code>: 绘制虚线,参数为数组.数组中的值依次为实线、虚线、实线、虚线排列，如果传入的参数为奇数，则不分实线与虚线</p>
+</li>
+<li><p><code>getLineDash()</code>: 获取虚线的值,获取到的结果为数组,获取的值为一组一组的数值</p>
+</li>
+</ul>
+<h4 id="绘制文字"><a href="#绘制文字" class="headerlink" title="绘制文字"></a>绘制文字</h4><ul>
+<li><p><code>strokeText(&#39;文字&#39;, x轴, y轴, 限制的文字最大长度)</code>: 描边文字,文字的长度小于限制的文字最大长度时对文字没有影响,超过后文字会被挤压收缩.使用<code>strokeStyle</code>为文字描边</p>
+</li>
+<li><p><code>fillText(&#39;文字&#39;, x轴, y轴, 限制的文字最大长度)</code>: 填充文字,用法同<code>strokeText()</code>,使用fillStyle属性绘制文本</p>
+</li>
+<li><p><code>measureText</code>: 预测文字,预测文字所占用的宽度或高度等,返回值为一个对象,目前返回值中只有一个width属性,未来可能扩展</p>
+</li>
+</ul>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="填充样式"><a href="#填充样式" class="headerlink" title="填充样式"></a>填充样式</h4><ul>
+<li><code>fillStyle</code>: 设置填充样式,如果指定颜色,可以使用css中可用的指定颜色值的任意格式</li>
+</ul>
+<h4 id="描边样式"><a href="#描边样式" class="headerlink" title="描边样式"></a>描边样式</h4><ul>
+<li><code>strokeStyle</code>: 设置描边样式,如果指定颜色,可以使用css中可用的指定颜色值的任意格式</li>
+</ul>
+<h4 id="线条样式"><a href="#线条样式" class="headerlink" title="线条样式"></a>线条样式</h4><ul>
+<li><p><code>lineCap</code>属性: 线帽样式,可能的值有<code>butt</code>、<code>round</code>、<code>square</code>,分别对应平头、圆头和方头，默认值为<code>butt</code></p>
+</li>
+<li><p><code>lineJoin</code>属性: 交点样式,可能的值有<code>round</code>、<code>bevel</code>和<code>miter</code> ,分别对应圆交（圆头）、斜交（平面）和斜接（尖头），默认值为<code>miter</code></p>
+</li>
+<li><p><code>miterLimit</code>属性: 设置或返回最大斜接长度，该属性只在<code>lineJoin</code>设置为<code>miter</code>时有效</p>
+</li>
+<li><p><code>lineWidth</code>属性: 线宽,设置线条的宽度</p>
+</li>
+</ul>
+<h4 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h4><ul>
+<li><p><code>font</code>属性: 后面接的属性与css语法一致,在此设置样式时,必须加单位,设置文字大小时,至少需要设置字体才能生效</p>
+</li>
+<li><p>对齐方式:</p>
+<ul>
+<li><code>textBaseLine</code>: 垂直对齐,即文本的基线.可能的值有<code>top</code>,<code>hanging</code>,<code>middle</code>,<code>alphabetic</code>,<code>ideographic</code>和<code>bottom</code></li>
+<li><code>textAlign</code>: 水平对齐,可能的值有<code>start</code>,<code>end</code>,<code>left</code>,<code>right</code>和<code>center</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h3><h4 id="创建img元素的三种方式"><a href="#创建img元素的三种方式" class="headerlink" title="创建img元素的三种方式"></a>创建img元素的三种方式</h4><ul>
+<li>html中书写img标签</li>
+<li><code>document.createElement(&#39;img&#39;)</code></li>
+<li><code>new Image()</code>构造函数</li>
+</ul>
+<h4 id="绘制图像-1"><a href="#绘制图像-1" class="headerlink" title="绘制图像"></a>绘制图像</h4><ul>
+<li><code>drawImage()</code><ul>
+<li>方式一: 三个参数–图像资源、绘制到画布的x轴坐标，y轴坐标</li>
+<li>方式二: 五个参数–要绘制的图像资源，x轴坐标，y轴坐标, 指定图像绘制的宽度，指定图像绘制的高度</li>
+<li>方式三: 九个参数–要绘制的图像资源，裁剪的起点x轴坐标，裁剪的起点y轴坐标，裁剪多宽，裁剪多高， x轴坐标，y轴坐标, 指定图像绘制的宽度，指定图像绘制的高度</li>
+</ul>
+</li>
+</ul>
+<h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><ul>
+<li><code>translate(x, y)</code>: x轴上平移x,y轴上平移y</li>
+</ul>
+<p>注意: 是平移多少,而不是平移到</p>
+<p>平移的是画布坐标系,平移后不会影响到之前绘制好的内容,且平移会累加</p>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><ul>
+<li><code>rotate(旋转的弧度)</code>: 旋转时的中心是坐标系的(0,0)点</li>
+</ul>
+<p>旋转的是画布坐标系,旋转后不会影响到之前绘制好的内容,且旋转会累加</p>
+<h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><ul>
+<li><code>scale(x, y)</code>: x轴缩放多少倍,y轴缩放多少倍</li>
+</ul>
+<p>缩放的是画布坐标系,缩放后不会影响到之前绘制好的内容,缩放会累加</p>
+<h3 id="状态保存与回滚"><a href="#状态保存与回滚" class="headerlink" title="状态保存与回滚"></a>状态保存与回滚</h3><ul>
+<li><p><code>save()</code>: 状态保存</p>
+<ul>
+<li>把<code>ctx</code>对象当前所有的属性值进行备份</li>
+<li><code>save()</code>不会保存页面中的路径</li>
+</ul>
+</li>
+<li><p><code>restore()</code>: 状态回滚</p>
+<ul>
+<li>把之前备份的状态取出来,作为当前状态使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="路径点判断"><a href="#路径点判断" class="headerlink" title="路径点判断"></a>路径点判断</h3><ul>
+<li><code>isPointInPath(x, y)</code>: x为要判断的点的x坐标,y为要判断的点的y坐标,返回值是布尔类型</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/21/express基本使用/" rel="next" title="express基本使用">
+                <i class="fa fa-chevron-left"></i> express基本使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/06/yarn简单使用/" rel="prev" title="yarn简单使用">
+                yarn简单使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/IMG_20160405_175459.jpg"
+               alt="duanlijie" />
+          <p class="site-author-name" itemprop="name">duanlijie</p>
+          <p class="site-description motion-element" itemprop="description">前端小白的个人笔记，个人记录所用jim_duan@outlook.com</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">1.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取环境"><span class="nav-number">1.0.1.</span> <span class="nav-text">获取环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动绘图游标到起点"><span class="nav-number">1.0.2.</span> <span class="nav-text">移动绘图游标到起点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制路径"><span class="nav-number">1.0.3.</span> <span class="nav-text">绘制路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描边和填充"><span class="nav-number">1.0.4.</span> <span class="nav-text">描边和填充</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置画布"><span class="nav-number">2.</span> <span class="nav-text">设置画布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2D上下文"><span class="nav-number">3.</span> <span class="nav-text">2D上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">3.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制路径-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">绘制路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#填充"><span class="nav-number">3.1.2.</span> <span class="nav-text">填充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描边"><span class="nav-number">3.1.3.</span> <span class="nav-text">描边</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制矩形"><span class="nav-number">3.1.4.</span> <span class="nav-text">绘制矩形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚线绘制"><span class="nav-number">3.1.5.</span> <span class="nav-text">虚线绘制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制文字"><span class="nav-number">3.1.6.</span> <span class="nav-text">绘制文字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">3.2.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#填充样式"><span class="nav-number">3.2.1.</span> <span class="nav-text">填充样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描边样式"><span class="nav-number">3.2.2.</span> <span class="nav-text">描边样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线条样式"><span class="nav-number">3.2.3.</span> <span class="nav-text">线条样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字样式"><span class="nav-number">3.2.4.</span> <span class="nav-text">文字样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制图像"><span class="nav-number">3.3.</span> <span class="nav-text">绘制图像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建img元素的三种方式"><span class="nav-number">3.3.1.</span> <span class="nav-text">创建img元素的三种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制图像-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">绘制图像</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平移"><span class="nav-number">3.4.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转"><span class="nav-number">3.5.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩放"><span class="nav-number">3.6.</span> <span class="nav-text">缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态保存与回滚"><span class="nav-number">3.7.</span> <span class="nav-text">状态保存与回滚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径点判断"><span class="nav-number">3.8.</span> <span class="nav-text">路径点判断</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">duanlijie</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
