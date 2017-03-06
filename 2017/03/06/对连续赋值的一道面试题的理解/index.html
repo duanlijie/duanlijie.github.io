@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://yoursite.com/images/03.png">
 <meta property="og:image" content="http://yoursite.com/images/04.png">
 <meta property="og:image" content="http://yoursite.com/images/05.png">
-<meta property="og:updated_time" content="2017-03-06T14:49:04.302Z">
+<meta property="og:updated_time" content="2017-03-06T14:53:48.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由一道面试题引发的对连续赋值的理解">
 <meta name="twitter:description" content="一道面试题:
@@ -280,7 +280,7 @@
 <p>在<code>a.x = a = {n: 2}</code>这个表达式中,涉及到了点和赋值运算符,点的优先级高于赋值运算符,并且赋值运算符是右结合的,所以这句表达式就相当于是<code>(a.x) = (a = {n: 2})</code></p>
 <p>下面以图表表示:<br>初始值为这种情况:<br><img src="/images/01.png" alt=""></p>
 <p>当执行到上面这句表达式时,由于点运算符优先级高于赋值运算符,所以先运行<code>a.x</code>,此时a指向的对象中有了一个x属性,如下图<br><img src="/images/02.png" alt=""></p>
-<p>执行完点运算符后,执行赋值运算符,由于赋值运算符是右结合,所以就继续执行<code>a = {n: 2}</code>,之前<code>a.x</code>指向的空间则等待赋值,虚线为<code>a.x</code>之前的指向,如下图<br><img src="/images/03.png" alt=""></p>
+<p>执行完点运算符后,执行赋值运算符,由于赋值运算符是右结合,所以就继续执行<code>a = {n: 2}</code>,之前<code>a</code>指向的对象的x属性则等待赋值,如下图,虚线为<code>a</code>之前的指向<br><img src="/images/03.png" alt=""></p>
 <p>执行完上述语句之后之后,继续执行最后一步,执行左边的赋值语句,如下图<br><img src="/images/04.png" alt=""></p>
 <p>将虚线去掉,如下图,就是最终的结果<br><img src="/images/05.png" alt=""></p>
 <p>由最终结果可以得到,<code>a.x</code>输出<code>undefined</code>,<code>b.x</code>输出<code>{n: 2}</code></p>
