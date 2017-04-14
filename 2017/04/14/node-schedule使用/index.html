@@ -94,7 +94,7 @@
 安装1$ npm install node-schedule">
 <meta property="og:image" content="http://yoursite.com/images/node-schedule-01.png">
 <meta property="og:image" content="http://yoursite.com/images/node-schedule-02.png">
-<meta property="og:updated_time" content="2017-04-14T09:08:20.373Z">
+<meta property="og:updated_time" content="2017-04-14T09:15:15.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-schedule使用">
 <meta name="twitter:description" content="介绍Node Schedule是一个为Nodejs开发的任务计划工具，可以用它很方便的实现很多定时任务
@@ -285,17 +285,17 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 会在每个小时的42分钟的时候执行，例如：19:42,20:42....</span></div><div class="line"><span class="keyword">var</span> j = schedule.scheduleJob(<span class="string">'42 * * * * '</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'The answer to life, the universe, and everything!'</span>);</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>每个参数占位符代表的意思：</p>
 <ul>
-<li><p>每分钟的第30秒触发： ‘30 <em> </em> <em> </em> *’</p>
+<li><p>每分钟的第30秒触发： ‘30 * * * * *‘</p>
 </li>
-<li><p>每小时的1分30秒触发 ：’30 1 <em> </em> <em> </em>‘</p>
+<li><p>每小时的1分30秒触发 ：’30 1 * * * *‘</p>
 </li>
-<li><p>每天的凌晨1点1分30秒触发 ：’30 1 1 <em> </em> *’</p>
+<li><p>每天的凌晨1点1分30秒触发 ：’30 1 1 * * *‘</p>
 </li>
-<li><p>每月的1日1点1分30秒触发 ：’30 1 1 1 <em> </em>‘</p>
+<li><p>每月的1日1点1分30秒触发 ：’30 1 1 1 * *‘</p>
 </li>
-<li><p>2016年的1月1日1点1分30秒触发 ：’30 1 1 1 2016 *’</p>
+<li><p>2016年的1月1日1点1分30秒触发 ：’30 1 1 1 2016 *‘</p>
 </li>
-<li><p>每周1的1点1分30秒触发 ：’30 1 1 <em> </em> 1’</p>
+<li><p>每周1的1点1分30秒触发 ：’30 1 1 * * 1’</p>
 </li>
 </ul>
 <p>corn风格的定时器还可以传入范围：</p>
