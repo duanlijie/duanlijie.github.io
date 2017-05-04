@@ -84,25 +84,19 @@
 
 
 
-<meta name="description" content="一道面试题:
-12345var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;">
+<meta name="description" content="本教程只提供一种部署方法，如果您有更好的办法，选择最佳实践即可
+基本流程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="由一道面试题引发的对连续赋值的理解">
-<meta property="og:url" content="http://yoursite.com/2017/03/06/对连续赋值的一道面试题的理解/index.html">
+<meta property="og:title" content="部署nodejs项目到阿里云ECS服务器">
+<meta property="og:url" content="http://yoursite.com/2017/05/04/阿里云ECS部署nodejs项目/index.html">
 <meta property="og:site_name" content="duanlijie的笔记">
-<meta property="og:description" content="一道面试题:
-12345var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;">
-<meta property="og:image" content="http://yoursite.com/images/01.png">
-<meta property="og:image" content="http://yoursite.com/images/02.png">
-<meta property="og:image" content="http://yoursite.com/images/03.png">
-<meta property="og:image" content="http://yoursite.com/images/04.png">
-<meta property="og:image" content="http://yoursite.com/images/05.png">
-<meta property="og:updated_time" content="2017-03-06T14:53:48.688Z">
+<meta property="og:description" content="本教程只提供一种部署方法，如果您有更好的办法，选择最佳实践即可
+基本流程">
+<meta property="og:updated_time" content="2017-05-04T05:11:03.283Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="由一道面试题引发的对连续赋值的理解">
-<meta name="twitter:description" content="一道面试题:
-12345var a = &amp;#123;n: 1&amp;#125;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;console.log(a.x); // undefinedconsole.log(b.x); // &amp;#123;n: 2&amp;#125;">
-<meta name="twitter:image" content="http://yoursite.com/images/01.png">
+<meta name="twitter:title" content="部署nodejs项目到阿里云ECS服务器">
+<meta name="twitter:description" content="本教程只提供一种部署方法，如果您有更好的办法，选择最佳实践即可
+基本流程">
 
 
 
@@ -120,7 +114,7 @@
   };
 </script>
 
-  <title> 由一道面试题引发的对连续赋值的理解 | duanlijie的笔记 </title>
+  <title> 部署nodejs项目到阿里云ECS服务器 | duanlijie的笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +224,7 @@
             
             
               
-                由一道面试题引发的对连续赋值的理解
+                部署nodejs项目到阿里云ECS服务器
               
             
           </h1>
@@ -242,8 +236,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-06T22:46:38+08:00" content="2017-03-06">
-              2017-03-06
+            <time itemprop="dateCreated" datetime="2017-05-04T13:10:14+08:00" content="2017-05-04">
+              2017-05-04
             </time>
           </span>
 
@@ -270,20 +264,23 @@
       
 
       
-        <p>一道面试题:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>: <span class="number">1</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">a.x = a = &#123;<span class="attr">n</span>: <span class="number">2</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a.x); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(b.x); <span class="comment">// &#123;n: 2&#125;</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>这是一道很老的面试题了,之前遇到这道面试题时,当时想的答案是第一个输出<code>{n: 2}</code>,第二个输出<code>undefined</code>,结果证明自己是错的,当时很困惑,在从网上看了其他人的解答后,不同的人对于答案有不同的理解,我在这里说一下我自己的理解:</p>
-<p>首先这道题的关键点就在于<code>a.x = a = {n: 2}</code>这段代码上。这就涉及到了运算符的优先级规则。</p>
-<p>js中不同运算符有着不同的优先级,运算符的优先级决定了表达式中运算执行的先后顺序,优先级高的运算符最先被执行。最简单的例子就是加减乘除的例子</p>
-<p>相同的优先级,结合性决定了拥有相同优先级的运算符的执行顺序.有左结合和右结合,分别相当于把左边的子表达式加上括号和把右边的子表达式加上括号。</p>
-<p>在<code>a.x = a = {n: 2}</code>这个表达式中,涉及到了点和赋值运算符,点的优先级高于赋值运算符,并且赋值运算符是右结合的,所以这句表达式就相当于是<code>(a.x) = (a = {n: 2})</code></p>
-<p>下面以图表表示:<br>初始值为这种情况:<br><img src="/images/01.png" alt=""></p>
-<p>当执行到上面这句表达式时,由于点运算符优先级高于赋值运算符,所以先运行<code>a.x</code>,此时a指向的对象中有了一个x属性,如下图<br><img src="/images/02.png" alt=""></p>
-<p>执行完点运算符后,执行赋值运算符,由于赋值运算符是右结合,所以就继续执行<code>a = {n: 2}</code>,之前<code>a</code>指向的对象的x属性则等待赋值,如下图,虚线为<code>a</code>之前的指向<br><img src="/images/03.png" alt=""></p>
-<p>执行完上述语句之后之后,继续执行最后一步,执行左边的赋值语句,如下图<br><img src="/images/04.png" alt=""></p>
-<p>将虚线去掉,如下图,就是最终的结果<br><img src="/images/05.png" alt=""></p>
-<p>由最终结果可以得到,<code>a.x</code>输出<code>undefined</code>,<code>b.x</code>输出<code>{n: 2}</code></p>
+        <p>本教程只提供一种部署方法，如果您有更好的办法，选择最佳实践即可</p>
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><a id="more"></a>
+<h4 id="购买阿里云ECS服务器"><a href="#购买阿里云ECS服务器" class="headerlink" title="购买阿里云ECS服务器"></a>购买阿里云ECS服务器</h4><p>因为是刚开始折腾，再加上我是个穷鬼，所以买了阿里云最便宜的套餐（非学生）：CPU： 1核    内存： 1024 MB (I/O优化)，带宽：1Mbps，操作系统： Ubuntu 16.04 64位</p>
+<h4 id="登录服务器实例"><a href="#登录服务器实例" class="headerlink" title="登录服务器实例"></a>登录服务器实例</h4><p>因为我电脑上有Git Bash，所以我是使用的Git Bash登录的，当然还有许多其他的工具，例如Putty或Xshell，阿里云上就有介绍，具体的去看阿里云上的教程就可以，我就不再在这里说了（其实是我也不会啦）</p>
+<p>打开终端后，输入<code>ssh root@服务器的公网IP</code>登录服务器，首次登录会出现一个提示，直接yes即可，接着按照提示输入密码就可以了</p>
+<h4 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h4><p>我安装的nodejs是6.x版本的，安装命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</div><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure>
+<p>运行完这段命令，在命令行里输入<code>node -v</code>，如果看到显示的版本号，那就说明安装成功啦<br>这个版本的node会连npm一起安装，所以就不用再单独安装npm了</p>
+<h4 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h4><p>在这里，部署项目有好多方法可选，由于我电脑上装着FileZilla，所以我就用这个上传代码到服务器啦，非常好用的一个工具</p>
+<ol>
+<li>打开FileZilla，进入后，主机填服务器的公网IP，用户名填root，密码就是你设置的登录密码，如果忘记了，可以去阿里云找回密码，端口一般为22，填完后，点击快速连接，如果信息正确，那么就可以下面的远程站点中看到你服务器中的文件了</li>
+<li>左侧的本地站点就是自己电脑上的本地文件，右侧的远程站点就是连接到的服务器上的文件，FileZilla可以直接操作远程站点中的文件。在本地站点中选中想要上传的文件，右键选择上传即可上传到服务器，非常方便</li>
+</ol>
+<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><p>启动项目之前需要安装项目依赖，<code>cd</code>到项目文件夹，执行<code>npm install</code></p>
+<p>我是使用的pm2启动的服务，所以首先需要安装pm2，在终端中直接<code>npm install -g pm2</code>安装即可</p>
+<p>pm2安装完毕后，<code>cd</code>到需要启动服务的项目文件夹中，运行<code>pm2 start 项目入口文件</code>即可</p>
+<p>到了这里，就可以访问你的项目了，在浏览器中输入<code>公网IP（或域名）:服务端口号</code>就可以访问啦</p>
 
       
     </div>
@@ -308,17 +305,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/06/yarn简单使用/" rel="next" title="yarn简单使用">
-                <i class="fa fa-chevron-left"></i> yarn简单使用
+              <a href="/2017/04/14/node-schedule使用/" rel="next" title="node-schedule使用">
+                <i class="fa fa-chevron-left"></i> node-schedule使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/10/js中的this指向/" rel="prev" title="js中的this指向">
-                js中的this指向 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,7 +411,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本流程"><span class="nav-number">1.</span> <span class="nav-text">基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#购买阿里云ECS服务器"><span class="nav-number">1.1.</span> <span class="nav-text">购买阿里云ECS服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登录服务器实例"><span class="nav-number">1.2.</span> <span class="nav-text">登录服务器实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装nodejs"><span class="nav-number">1.3.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署项目"><span class="nav-number">1.4.</span> <span class="nav-text">部署项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动项目"><span class="nav-number">1.5.</span> <span class="nav-text">启动项目</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
